@@ -1,0 +1,115 @@
+.features-section {
+  background: $light-text;
+  padding: 6rem 0;
+  
+  &__container {
+    @include container;
+  }
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  &__title {
+    color: $deep-navy;
+    margin-bottom: 1rem;
+  }
+  
+  &__subtitle {
+    color: rgba($dark-text, 0.7);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include laptop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &__cta {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba($electric-blue, 0.05) 0%, rgba($gold, 0.05) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba($electric-blue, 0.1);
+  }
+  
+  &__cta-text {
+    font-size: 1.25rem;
+    color: $deep-navy;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__cta-btn {
+    padding: 1rem 2rem;
+    background: $gradient-accent;
+    color: $light-text;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-gold;
+    }
+  }
+}
+
+.feature-card {
+  background: $off-white;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s $ease-out-quad;
+  border: 1px solid rgba($electric-blue, 0.1);
+  text-align: center;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $shadow-lg;
+    border-color: transparent;
+    
+    .feature-card__icon-wrapper {
+      transform: rotateY(180deg);
+    }
+  }
+  
+  &__icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.6s $ease-out-quad;
+  }
+  
+  &__title {
+    font-size: 1.25rem;
+    color: $deep-navy;
+    margin-bottom: 0.75rem;
+  }
+  
+  &__description {
+    color: rgba($dark-text, 0.7);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,43 @@
+// Цветовая палитра
+$deep-navy: #0A174E;
+$electric-blue: #003DA5;
+$gold: #D4AF37;
+$coral: #FF6B6B;
+$off-white: #F8F9FA;
+$dark-text: #1A1A1A;
+$light-text: #FFFFFF;
+
+// Градиенты
+$gradient-primary: linear-gradient(135deg, $deep-navy 0%, $electric-blue 100%);
+$gradient-accent: linear-gradient(135deg, $gold 0%, $coral 100%);
+$gradient-hero: radial-gradient(circle at top right, rgba($electric-blue, 0.1) 0%, transparent 50%);
+
+// Тени
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+$shadow-gold: 0 4px 20px rgba($gold, 0.3);
+
+// Брейкпоинты
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: 1440px;
+
+// Шрифты
+$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-accent: 'Playfair Display', serif;
+
+// Анимации
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+// Spacing variables
+$section-padding-mobile: 2rem;
+$section-padding-tablet: 3rem;
+$section-padding-laptop: 4rem;
+$section-padding-desktop: 5rem;
+
+$section-padding-compact-mobile: 1.5rem;
+$section-padding-compact-tablet: 2rem;
+$section-padding-compact-laptop: 3rem;

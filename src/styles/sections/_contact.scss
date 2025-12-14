@@ -1,0 +1,273 @@
+.contact-section {
+  background: $gradient-primary;
+  color: $light-text;
+  padding: 6rem 0;
+  
+  &__container {
+    @include container;
+  }
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  &__title {
+    color: $light-text;
+    margin-bottom: 1rem;
+  }
+  
+  &__subtitle {
+    opacity: 0.9;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    
+    @include laptop {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+  
+  &__info {
+    &-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: $gold;
+    }
+
+    &-description {
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+  }
+  
+  &__info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  &__info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba($light-text, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    
+    &:hover {
+      background: rgba($light-text, 0.2);
+      transform: translateX(10px);
+    }
+  }
+  
+  &__info-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba($gold, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $gold;
+    flex-shrink: 0;
+  }
+  
+  &__info-content {
+    flex: 1;
+  }
+
+  &__info-title-small {
+    font-size: 0.875rem;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+  }
+  
+  &__info-value {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  &__info-description-small {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  
+  &__map {
+    &-placeholder {
+      background: rgba($light-text, 0.1);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba($light-text, 0.2);
+      
+      p {
+        font-weight: 600;
+        margin: 1rem 0 0.5rem;
+      }
+      
+      span {
+        opacity: 0.7;
+        font-size: 0.875rem;
+      }
+    }
+  }
+  
+  &__form-wrapper {
+    background: rgba($light-text, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($light-text, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    
+    @include tablet {
+      padding: 3rem;
+    }
+  }
+
+  &__form-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: $gold;
+  }
+
+  &__form-subtitle {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  &__label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: rgba($light-text, 0.9);
+  }
+  
+  &__input,
+  &__textarea {
+    background: rgba($light-text, 0.1);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1rem;
+    color: $light-text;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: $gold;
+      background: rgba($light-text, 0.15);
+    }
+    
+    &::placeholder {
+      color: rgba($light-text, 0.5);
+    }
+    
+    &--error {
+      border-color: $coral;
+    }
+  }
+  
+  &__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  &__error {
+    color: $coral;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    
+    &--success {
+      background: rgba(72, 187, 120, 0.2);
+      color: #48bb78;
+    }
+    
+    &--error {
+      background: rgba(245, 101, 101, 0.2);
+      color: $coral;
+    }
+  }
+  
+  &__submit {
+    background: $gradient-accent;
+    color: $light-text;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: $shadow-gold;
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  
+  &__spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba($light-text, 0.3);
+    border-top-color: $light-text;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  &__privacy {
+    font-size: 0.875rem;
+    opacity: 0.7;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

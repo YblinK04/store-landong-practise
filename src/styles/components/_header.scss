@@ -1,0 +1,360 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+
+  &--scrolled {
+    background: rgba($deep-navy, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 0;
+    box-shadow: $shadow-md;
+  }
+
+  // Стили для светлых секций (Products, Features)
+  &--light {
+    &.header--scrolled {
+      background: rgba($light-text, 0.95);
+      box-shadow: $shadow-md;
+      
+      .header__logo-text {
+        @include text-gradient;
+      }
+      
+      .header__logo-subtitle {
+        color: rgba($dark-text, 0.8);
+      }
+      
+      .header__nav-item {
+        color: $dark-text;
+        
+        &:hover {
+          color: $electric-blue;
+        }
+        
+        &::after {
+          background: $electric-blue;
+        }
+        
+        &--active {
+          color: $electric-blue;
+        }
+      }
+      
+      .header__phone {
+        color: $dark-text;
+        background: rgba($dark-text, 0.1);
+        
+        &:hover {
+          color: $electric-blue;
+          background: rgba($electric-blue, 0.1);
+        }
+      }
+      
+      .header__consult-btn {
+        background: $gradient-accent;
+        color: $light-text;
+        
+        &:hover {
+          box-shadow: $shadow-gold;
+        }
+      }
+      
+      .header__menu-button {
+        color: $dark-text;
+      }
+    }
+  }
+
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    
+    &-text {
+      font-family: $font-accent;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $light-text;
+      line-height: 1;
+      transition: color 0.3s ease;
+
+      &--dark {
+        color: $dark-text;
+        @include text-gradient;
+      }
+    }
+
+    &-subtitle {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-top: 0.25rem;
+      letter-spacing: 1px;
+      color: $light-text;
+      transition: color 0.3s ease;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      gap: 2rem;
+      margin: 0 auto;
+    }
+
+    @include laptop {
+      gap: 3rem;
+    }
+
+    &-item {
+      color: $light-text;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+      background: none;
+      border: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $gold;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &--active {
+        color: $gold;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $light-text;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: rgba($light-text, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba($light-text, 0.2);
+      color: $gold;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__consult-btn {
+    padding: 0.75rem 1.5rem;
+    background: $gradient-accent;
+    color: $light-text;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    border: none;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-gold;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__menu-button {
+    color: $light-text;
+    display: block;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    background: $deep-navy;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    @include tablet {
+      display: none;
+    }
+
+    &--open {
+      display: flex;
+    }
+
+    &--light {
+      background: $light-text;
+      
+      .header__mobile-close {
+        color: $dark-text;
+      }
+      
+      .header__mobile-nav-item {
+        color: $dark-text;
+        border-bottom: 1px solid rgba($dark-text, 0.1);
+        
+        &:hover {
+          color: $electric-blue;
+        }
+        
+        &--active {
+          color: $electric-blue;
+        }
+      }
+      
+      .header__mobile-phone {
+        background: rgba($dark-text, 0.1);
+        color: $dark-text;
+      }
+    }
+  }
+
+  &__mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba($light-text, 0.1);
+  }
+
+  &__mobile-logo {
+    .header__logo-text {
+      font-size: 1.25rem;
+      color: $light-text;
+    }
+  }
+
+  &__mobile-close {
+    color: $light-text;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+  }
+
+  &__mobile-links {
+    flex: 1;
+    padding: 1rem;
+  }
+
+  &__mobile-nav-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: $light-text;
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba($light-text, 0.1);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $gold;
+    }
+
+    &--active {
+      color: $gold;
+      font-weight: 600;
+    }
+  }
+
+  &__mobile-actions {
+    padding: 1.5rem;
+    border-top: 1px solid rgba($light-text, 0.1);
+  }
+
+  &__mobile-phone {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $light-text;
+    text-decoration: none;
+    padding: 1rem;
+    background: rgba($light-text, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+
+    &-label {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-bottom: 0.25rem;
+    }
+
+    &-number {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  }
+
+  &__mobile-consult-btn {
+    width: 100%;
+    padding: 1rem;
+    background: $gradient-accent;
+    color: $light-text;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-gold;
+    }
+  }
+}

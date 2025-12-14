@@ -1,0 +1,311 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: $gradient-primary;
+  color: $light-text;
+  padding-top: 100px;
+  padding-bottom: 40px; 
+
+  @include laptop {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba($gold, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba($coral, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba($electric-blue, 0.1) 0%, transparent 50%);
+    animation: particles-float 20s ease-in-out infinite;
+  }
+
+  &__gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $gradient-hero;
+  }
+
+  &__container {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+
+    @include laptop {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    max-width: 100%;
+    text-align: center;
+
+    @include laptop {
+      text-align: left;
+      max-width: 600px;
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba($light-text, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($light-text, 0.2);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+
+    @include tablet {
+      font-size: 3rem;
+    }
+
+    @include laptop {
+      font-size: 3.5rem;
+    }
+
+    &-accent {
+      @include text-gradient;
+    }
+  }
+
+  &__description {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 100%;
+
+    @include laptop {
+      max-width: 500px;
+    }
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+
+    svg {
+      color: $gold;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: $gradient-accent;
+    color: $light-text;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-gold;
+    }
+  }
+
+  &__secondary {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: $light-text;
+    border: 2px solid rgba($light-text, 0.3);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+
+    &:hover {
+      border-color: $light-text;
+      background: rgba($light-text, 0.1);
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 100%;
+    }
+
+    @include laptop {
+      margin: 0;
+    }
+  }
+
+  &__stat {
+    text-align: center;
+    
+    &-number {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      @include text-gradient;
+    }
+
+    &-label {
+      font-size: 0.875rem;
+      opacity: 0.8;
+    }
+  }
+
+  &__preview {
+    display: none;
+
+    @include laptop {
+      display: block;
+    }
+  }
+
+  &__product-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, rgba($electric-blue, 0.2) 0%, rgba($gold, 0.1) 100%);
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__product-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba($gold, 0.3) 0%, transparent 70%);
+    filter: blur(40px);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  &__product-icons {
+    position: absolute;
+    display: flex;
+    gap: 1rem;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  &__product-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
+    background: rgba($light-text, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: $gold;
+    border: 1px solid rgba($light-text, 0.2);
+    animation: float 3s ease-in-out infinite;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+    &:nth-child(3) {
+      animation-delay: 1s;
+    }
+    &:nth-child(4) {
+      animation-delay: 1.5s;
+    }
+  }
+}
+
+@keyframes particles-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(20px) rotate(240deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

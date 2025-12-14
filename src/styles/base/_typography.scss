@@ -1,0 +1,59 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-accent;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  
+  @include mobile {
+    font-size: 2.5rem;
+  }
+  
+  @include tablet {
+    font-size: 3rem;
+  }
+  
+  @include laptop {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  
+  @include mobile {
+    font-size: 2rem;
+  }
+  
+  @include tablet {
+    font-size: 2.25rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  
+  @include mobile {
+    font-size: 1.75rem;
+  }
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.text-gradient {
+  @include text-gradient;
+}
+
+.text-accent {
+  color: $gold;
+}
+
+.text-coral {
+  color: $coral;
+}

@@ -1,0 +1,395 @@
+.products-showcase {
+  background: $light-text; // Меняем на белый фон вместо off-white
+  padding-top: 2rem; // Уменьшаем верхний отступ
+  padding-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+  
+  @include tablet {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+  
+  &__container {
+    @include container;
+  }
+  
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem; // Уменьшаем отступ
+    
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+      margin-bottom: 2.5rem;
+    }
+  }
+  
+  &__title {
+    color: $deep-navy;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    
+    @include tablet {
+      font-size: 2.25rem;
+    }
+    
+    @include laptop {
+      font-size: 2.5rem;
+    }
+  }
+  
+  &__subtitle {
+    color: rgba($dark-text, 0.7);
+    font-size: 1rem;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+    
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+  
+  &__control-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba($electric-blue, 0.3);
+    background: $light-text;
+    color: $electric-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      border-color: $electric-blue;
+      background: $electric-blue;
+      color: $light-text;
+      transform: scale(1.05);
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  
+  &__scroll-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 0 -1rem;
+    padding: 1rem 1rem 2rem;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    
+    @include tablet {
+      margin: 0;
+      padding: 1rem 0 2rem;
+    }
+  }
+  
+  &__scroll-content {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    padding: 0.5rem;
+    
+    @include tablet {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    @include laptop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  &__category {
+    padding: 0.5rem 1.25rem;
+    border: 2px solid rgba($electric-blue, 0.3);
+    border-radius: 25px;
+    background: transparent;
+    color: $electric-blue;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    
+    &:hover {
+      border-color: $electric-blue;
+      background: rgba($electric-blue, 0.05);
+    }
+    
+    &--active {
+      background: $electric-blue;
+      color: $light-text;
+      border-color: $electric-blue;
+    }
+  }
+  
+  &__footer {
+    margin-top: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+  
+  &__footer-text {
+    color: rgba($dark-text, 0.7);
+    font-size: 1rem;
+    max-width: 500px;
+  }
+  
+  &__footer-btn {
+    padding: 0.75rem 2rem;
+    background: transparent;
+    border: 2px solid $electric-blue;
+    border-radius: 10px;
+    color: $electric-blue;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: $electric-blue;
+      color: $light-text;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+}
+
+.product-showcase-card {
+  background: $light-text;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  transition: all 0.3s $ease-out-quad;
+  min-width: 300px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba($electric-blue, 0.1);
+  
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-8px);
+    border-color: transparent;
+    
+    .product-showcase-card__image-glow {
+      animation: pulse 2s infinite;
+    }
+  }
+  
+  &__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.375rem 0.875rem;
+    background: $gradient-accent;
+    color: $light-text;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+  }
+  
+  &__image {
+    position: relative;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  &__image-glow {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(15px);
+    transition: all 0.3s ease;
+  }
+  
+  &__features {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+    
+    svg {
+      color: rgba($light-text, 0.8);
+      background: rgba($dark-text, 0.3);
+      padding: 0.25rem;
+      border-radius: 6px;
+      backdrop-filter: blur(10px);
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  &__content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__category {
+    font-size: 0.875rem;
+    color: $electric-blue;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  &__name {
+    font-size: 1.125rem;
+    color: $deep-navy;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    min-height: 2.8em;
+  }
+  
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  &__stars {
+    display: flex;
+    gap: 0.125rem;
+  }
+  
+  &__rating-text {
+    font-size: 0.875rem;
+    color: rgba($dark-text, 0.6);
+    font-weight: 500;
+  }
+  
+  &__features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+  
+  &__feature {
+    background: rgba($electric-blue, 0.1);
+    color: $electric-blue;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-block;
+    line-height: 1.4;
+  }
+  
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  &__price-current {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: $deep-navy;
+  }
+  
+  &__price-old {
+    font-size: 1rem;
+    color: rgba($dark-text, 0.5);
+    text-decoration: line-through;
+  }
+  
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    
+    button {
+      flex: 1;
+      padding: 0.75rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+  }
+  
+  &__btn-primary {
+    background: $electric-blue;
+    color: $light-text;
+    border: none;
+    
+    &:hover {
+      background: $deep-navy;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+  
+  &__btn-secondary {
+    background: transparent;
+    border: 2px solid rgba($electric-blue, 0.3);
+    color: $electric-blue;
+    
+    &:hover {
+      border-color: $electric-blue;
+      background: rgba($electric-blue, 0.1);
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
