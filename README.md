@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎯 YTech - Лендинг премиум-электроники
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-14-black" alt="Next.js 14">
+  <img src="https://img.shields.io/badge/TypeScript-5-blue" alt="TypeScript 5">
+  <img src="https://img.shields.io/badge/React-18-61DAFB" alt="React 18">
+  <img src="https://img.shields.io/badge/Framer%20Motion-10-0055FF" alt="Framer Motion 10">
+  <img src="https://img.shields.io/badge/SCSS-BEM-CC6699" alt="SCSS/BEM">
+  <img src="https://img.shields.io/badge/Lighthouse-90%2B-success" alt="Lighthouse 90+">
+</p>
 
-First, run the development server:
+<p align="center">
+  <strong>Современный, высокопроизводительный лендинг для интернет-магазина премиум-электроники</strong>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p align="center">
+  <a href="#-демо">Демо</a> • 
+  <a href="#-особенности">Особенности</a> • 
+  <a href="#-технологии">Технологии</a> • 
+  <a href="#-установка">Установка</a> • 
+  <a href="#-структура">Структура</a> • 
+  <a href="#-оптимизация">Оптимизация</a> • 
+  <a href="#-seo">SEO</a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![YTech Preview](https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 О проекте
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+YTech — это современный лендинг для интернет-магазина премиум-электроники, демонстрирующий передовые практики фронтенд-разработки. Проект создан с использованием Next.js 14, TypeScript и современных библиотек для анимаций.
 
-## Learn More
+### 🎨 Дизайн
 
-To learn more about Next.js, take a look at the following resources:
+- **Цветовая палитра**: Deep Navy (#0A174E) + Electric Blue (#003DA5) + Gold (#D4AF37)
+- **Типографика**: Inter (основной) + Playfair Display (акцентный)
+- **Анимации**: Плавные переходы, параллакс, магнитные кнопки
+- **Адаптивность**: 4 контрольные точки (320px, 768px, 1024px, 1440px)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Особенности
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🚀 Производительность
 
-## Deploy on Vercel
+- **Lazy Loading**: Динамическая загрузка компонентов с Suspense
+- **Code Splitting**: Автоматическое разделение кода Next.js
+- **Image Optimization**: Оптимизация изображений через next/image
+- **SCSS с БЭМ**: Чистая, поддерживаемая архитектура стилей
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🎯 Пользовательский опыт
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Адаптивный дизайн**: Идеальное отображение на всех устройствах
+- **Микроанимации**: Hover-эффекты, плавные переходы
+- **Интерактивность**: Магнитные кнопки, параллакс скролл
+- **Доступность**: Полная поддержка screen readers
+
+### 🔧 Технические фичи
+
+- **TypeScript**: Строгая типизация всего проекта
+- **Кастомные хуки**: Разделение логики и переиспользование
+- **Семантическая разметка**: HTML5 теги, правильная структура
+- **SEO оптимизация**: Meta теги, Open Graph, JSON-LD
+
+## 🛠 Технологии
+
+### Основной стек
+
+- **Next.js 14** - React фреймворк с App Router
+- **TypeScript 5** - Статическая типизация
+- **React 18** - Библиотека для UI
+- **Framer Motion 10** - Продвинутые анимации
+- **SCSS/SASS** - Препроцессор CSS с БЭМ методологией
+
+### Дополнительные библиотеки
+
+- **React Hook Form** - Управление формами с валидацией
+- **React Intersection Observer** - Анимации при скролле
+- **Lucide React** - Иконки
+- **EmailJS** - Отправка форм (fallback через Telegram)
+
+## 📁 Структура проекта
