@@ -1,5 +1,8 @@
+@use "mixins";
+@use "variables";
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-accent;
+  font-family: variables.$font-accent;
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -8,15 +11,15 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3.5rem;
   
-  @include mobile {
+  @include mixins.mobile {
     font-size: 2.5rem;
   }
   
-  @include tablet {
+  @include mixins.tablet {
     font-size: 3rem;
   }
   
-  @include laptop {
+  @include mixins.laptop {
     font-size: 3.5rem;
   }
 }
@@ -24,11 +27,11 @@ h1 {
 h2 {
   font-size: 2.5rem;
   
-  @include mobile {
+  @include mixins.mobile {
     font-size: 2rem;
   }
   
-  @include tablet {
+  @include mixins.tablet {
     font-size: 2.25rem;
   }
 }
@@ -36,7 +39,7 @@ h2 {
 h3 {
   font-size: 2rem;
   
-  @include mobile {
+  @include mixins.mobile {
     font-size: 1.75rem;
   }
 }
@@ -47,13 +50,13 @@ p {
 }
 
 .text-gradient {
-  @include text-gradient;
+  @include mixins.text-gradient;
 }
 
 .text-accent {
-  color: $gold;
+  color: variables.$gold;
 }
 
 .text-coral {
-  color: $coral;
+  color: variables.$coral;
 }

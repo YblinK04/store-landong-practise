@@ -1,11 +1,14 @@
+@use "../base/mixins";
+@use "../base/variables";
+
 .footer {
-  background: $deep-navy;
-  color: $light-text;
+  background: variables.$deep-navy;
+  color: variables.$light-text;
   padding: 4rem 0 2rem;
   position: relative;
 
   &__container {
-    @include container;
+    @include mixins.container;
   }
 
   &__main {
@@ -14,19 +17,19 @@
     gap: 3rem;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
-    border-bottom: 1px solid rgba($light-text, 0.1);
+    border-bottom: 1px solid rgba(variables.$light-text, 0.1);
 
-    @include tablet {
+    @include mixins.tablet {
       grid-template-columns: 1fr 2fr;
     }
   }
 
   &__brand {
     .footer__logo {
-      font-family: $font-accent;
+      font-family: variables.$font-accent;
       font-size: 2rem;
       font-weight: 700;
-      @include text-gradient;
+      @include mixins.text-gradient;
       margin-bottom: 1rem;
     }
   }
@@ -45,16 +48,16 @@
       width: 40px;
       height: 40px;
       border-radius: 10px;
-      background: rgba($light-text, 0.1);
+      background: rgba(variables.$light-text, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: $light-text;
+      color: variables.$light-text;
       transition: all 0.3s ease;
 
       &:hover {
-        background: $electric-blue;
-        color: $light-text;
+        background: variables.$electric-blue;
+        color: variables.$light-text;
         transform: translateY(-3px);
       }
     }
@@ -65,7 +68,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 
-    @include laptop {
+    @include mixins.laptop {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -75,7 +78,7 @@
       font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 1rem;
-      color: $gold;
+      color: variables.$gold;
     }
   }
 
@@ -90,13 +93,13 @@
   }
 
   &__link {
-    color: rgba($light-text, 0.8);
+    color: rgba(variables.$light-text, 0.8);
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 0.95rem;
 
     &:hover {
-      color: $light-text;
+      color: variables.$light-text;
       padding-left: 5px;
     }
   }
@@ -106,7 +109,7 @@
     flex-direction: column;
     gap: 2rem;
 
-    @include tablet {
+    @include mixins.tablet {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -127,13 +130,13 @@
     gap: 1rem;
 
     &-link {
-      color: rgba($light-text, 0.7);
+      color: rgba(variables.$light-text, 0.7);
       text-decoration: none;
       font-size: 0.85rem;
       transition: color 0.3s ease;
 
       &:hover {
-        color: $light-text;
+        color: variables.$light-text;
         text-decoration: underline;
       }
     }
@@ -154,7 +157,7 @@
 
     &-method {
       padding: 0.25rem 0.75rem;
-      background: rgba($light-text, 0.1);
+      background: rgba(variables.$light-text, 0.1);
       border-radius: 5px;
       font-size: 0.85rem;
       opacity: 0.9;
@@ -168,15 +171,15 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: $gradient-accent;
-    color: $light-text;
+    background: variables.$gradient-accent;
+    color: variables.$light-text;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 100;
-    box-shadow: $shadow-gold;
+    box-shadow: variables.$shadow-gold;
     transition: all 0.3s ease;
 
     &:hover {

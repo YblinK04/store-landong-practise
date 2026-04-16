@@ -1,20 +1,16 @@
-// Base
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/reset';
-@import 'base/typography';
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/reset';
+@use 'base/typography';
 
-// Components
-@import 'components/header';
-@import 'components/layout';
-@import 'components/footer';
+@use 'components/header';
+@use 'components/layout';
+@use 'components/footer';
 
-// Sections
-@import 'sections/hero';
-@import 'sections/showcase';
-@import 'sections/features';
-@import 'sections/contact';
+@use 'sections/hero';
+@use 'sections/showcase';
+@use 'sections/features';
+@use 'sections/contact';
 
-// Utils
- @import 'utils/animation';
- @import 'utils/helpers';
+ @use 'utils/animation';
+ @use 'utils/helpers';

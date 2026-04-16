@@ -1,10 +1,13 @@
+@use "../base/mixins";
+@use "../base/variables";
+
 .contact-section {
-  background: $gradient-primary;
-  color: $light-text;
+  background: variables.$gradient-primary;
+  color: variables.$light-text;
   padding: 6rem 0;
   
   &__container {
-    @include container;
+    @include mixins.container;
   }
   
   &__header {
@@ -13,7 +16,7 @@
   }
   
   &__title {
-    color: $light-text;
+    color: variables.$light-text;
     margin-bottom: 1rem;
   }
   
@@ -29,7 +32,7 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     
-    @include laptop {
+    @include mixins.laptop {
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
     }
@@ -39,7 +42,7 @@
     &-title {
       font-size: 1.8rem;
       margin-bottom: 2rem;
-      color: $gold;
+      color: variables.$gold;
     }
 
     &-description {
@@ -61,14 +64,14 @@
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
-    background: rgba($light-text, 0.1);
+    background: rgba(variables.$light-text, 0.1);
     border-radius: 15px;
     transition: all 0.3s ease;
     text-decoration: none;
     color: inherit;
     
     &:hover {
-      background: rgba($light-text, 0.2);
+      background: rgba(variables.$light-text, 0.2);
       transform: translateX(10px);
     }
   }
@@ -77,11 +80,11 @@
     width: 50px;
     height: 50px;
     border-radius: 12px;
-    background: rgba($gold, 0.2);
+    background: rgba(variables.$gold, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $gold;
+    color: variables.$gold;
     flex-shrink: 0;
   }
   
@@ -107,11 +110,11 @@
   
   &__map {
     &-placeholder {
-      background: rgba($light-text, 0.1);
+      background: rgba(variables.$light-text, 0.1);
       border-radius: 15px;
       padding: 2rem;
       text-align: center;
-      border: 1px solid rgba($light-text, 0.2);
+      border: 1px solid rgba(variables.$light-text, 0.2);
       
       p {
         font-weight: 600;
@@ -126,13 +129,13 @@
   }
   
   &__form-wrapper {
-    background: rgba($light-text, 0.05);
+    background: rgba(variables.$light-text, 0.05);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba($light-text, 0.1);
+    border: 1px solid rgba(variables.$light-text, 0.1);
     border-radius: 20px;
     padding: 2rem;
     
-    @include tablet {
+    @include mixins.tablet {
       padding: 3rem;
     }
   }
@@ -140,7 +143,7 @@
   &__form-title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: $gold;
+    color: variables.$gold;
   }
 
   &__form-subtitle {
@@ -164,32 +167,32 @@
   &__label {
     font-weight: 600;
     font-size: 0.875rem;
-    color: rgba($light-text, 0.9);
+    color: rgba(variables.$light-text, 0.9);
   }
   
   &__input,
   &__textarea {
-    background: rgba($light-text, 0.1);
+    background: rgba(variables.$light-text, 0.1);
     border: 2px solid transparent;
     border-radius: 10px;
     padding: 1rem;
-    color: $light-text;
+    color: variables.$light-text;
     font-family: inherit;
     font-size: 1rem;
     transition: all 0.3s ease;
     
     &:focus {
       outline: none;
-      border-color: $gold;
-      background: rgba($light-text, 0.15);
+      border-color: variables.$gold;
+      background: rgba(variables.$light-text, 0.15);
     }
     
     &::placeholder {
-      color: rgba($light-text, 0.5);
+      color: rgba(variables.$light-text, 0.5);
     }
     
     &--error {
-      border-color: $coral;
+      border-color: variables.$coral;
     }
   }
   
@@ -199,7 +202,7 @@
   }
   
   &__error {
-    color: $coral;
+    color: variables.$coral;
     font-size: 0.875rem;
     margin-top: 0.25rem;
   }
@@ -219,13 +222,13 @@
     
     &--error {
       background: rgba(245, 101, 101, 0.2);
-      color: $coral;
+      color: variables.$coral;
     }
   }
   
   &__submit {
-    background: $gradient-accent;
-    color: $light-text;
+    background: variables.$gradient-accent;
+    color: variables.$light-text;
     border: none;
     border-radius: 10px;
     padding: 1rem 2rem;
@@ -240,7 +243,7 @@
     
     &:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: $shadow-gold;
+      box-shadow: variables.$shadow-gold;
     }
     
     &:disabled {
@@ -252,8 +255,8 @@
   &__spinner {
     width: 20px;
     height: 20px;
-    border: 2px solid rgba($light-text, 0.3);
-    border-top-color: $light-text;
+    border: 2px solid rgba(variables.$light-text, 0.3);
+    border-top-color: variables.$light-text;
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }

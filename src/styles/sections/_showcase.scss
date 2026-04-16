@@ -1,17 +1,20 @@
+@use "../base/mixins";
+@use "../base/variables";
+
 .products-showcase {
-  background: $light-text; // Меняем на белый фон вместо off-white
+  background: variables.$light-text; // Меняем на белый фон вместо off-white
   padding-top: 2rem; // Уменьшаем верхний отступ
   padding-bottom: 4rem;
   position: relative;
   z-index: 1;
   
-  @include tablet {
+  @include mixins.tablet {
     padding-top: 3rem;
     padding-bottom: 5rem;
   }
   
   &__container {
-    @include container;
+    @include mixins.container;
   }
   
   &__header {
@@ -21,7 +24,7 @@
     text-align: center;
     margin-bottom: 2rem; // Уменьшаем отступ
     
-    @include tablet {
+    @include mixins.tablet {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
@@ -31,26 +34,26 @@
   }
   
   &__title {
-    color: $deep-navy;
+    color: variables.$deep-navy;
     margin-bottom: 0.5rem;
     font-size: 2rem;
     
-    @include tablet {
+    @include mixins.tablet {
       font-size: 2.25rem;
     }
     
-    @include laptop {
+    @include mixins.laptop {
       font-size: 2.5rem;
     }
   }
   
   &__subtitle {
-    color: rgba($dark-text, 0.7);
+    color: rgba(variables.$dark-text, 0.7);
     font-size: 1rem;
     max-width: 500px;
     margin-bottom: 1.5rem;
     
-    @include tablet {
+    @include mixins.tablet {
       margin-bottom: 0;
     }
   }
@@ -60,7 +63,7 @@
     gap: 0.5rem;
     margin-top: 1rem;
     
-    @include tablet {
+    @include mixins.tablet {
       margin-top: 0;
     }
   }
@@ -69,18 +72,18 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 2px solid rgba($electric-blue, 0.3);
-    background: $light-text;
-    color: $electric-blue;
+    border: 2px solid rgba(variables.$electric-blue, 0.3);
+    background: variables.$light-text;
+    color: variables.$electric-blue;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     
     &:hover {
-      border-color: $electric-blue;
-      background: $electric-blue;
-      color: $light-text;
+      border-color: variables.$electric-blue;
+      background: variables.$electric-blue;
+      color: variables.$light-text;
       transform: scale(1.05);
     }
     
@@ -99,7 +102,7 @@
       display: none;
     }
     
-    @include tablet {
+    @include mixins.tablet {
       margin: 0;
       padding: 1rem 0 2rem;
     }
@@ -111,14 +114,14 @@
     width: max-content;
     padding: 0.5rem;
     
-    @include tablet {
+    @include mixins.tablet {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
     
-    @include laptop {
+    @include mixins.laptop {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -133,24 +136,24 @@
   
   &__category {
     padding: 0.5rem 1.25rem;
-    border: 2px solid rgba($electric-blue, 0.3);
+    border: 2px solid rgba(variables.$electric-blue, 0.3);
     border-radius: 25px;
     background: transparent;
-    color: $electric-blue;
+    color: variables.$electric-blue;
     font-weight: 500;
     font-size: 0.875rem;
     transition: all 0.3s ease;
     white-space: nowrap;
     
     &:hover {
-      border-color: $electric-blue;
-      background: rgba($electric-blue, 0.05);
+      border-color: variables.$electric-blue;
+      background: rgba(variables.$electric-blue, 0.05);
     }
     
     &--active {
-      background: $electric-blue;
-      color: $light-text;
-      border-color: $electric-blue;
+      background: variables.$electric-blue;
+      color: variables.$light-text;
+      border-color: variables.$electric-blue;
     }
   }
   
@@ -162,7 +165,7 @@
     align-items: center;
     gap: 1.5rem;
     
-    @include tablet {
+    @include mixins.tablet {
       flex-direction: row;
       justify-content: space-between;
       text-align: left;
@@ -170,7 +173,7 @@
   }
   
   &__footer-text {
-    color: rgba($dark-text, 0.7);
+    color: rgba(variables.$dark-text, 0.7);
     font-size: 1rem;
     max-width: 500px;
   }
@@ -178,35 +181,35 @@
   &__footer-btn {
     padding: 0.75rem 2rem;
     background: transparent;
-    border: 2px solid $electric-blue;
+    border: 2px solid variables.$electric-blue;
     border-radius: 10px;
-    color: $electric-blue;
+    color: variables.$electric-blue;
     font-weight: 600;
     transition: all 0.3s ease;
     
     &:hover {
-      background: $electric-blue;
-      color: $light-text;
+      background: variables.$electric-blue;
+      color: variables.$light-text;
       transform: translateY(-2px);
-      box-shadow: $shadow-md;
+      box-shadow: variables.$shadow-md;
     }
   }
 }
 
 .product-showcase-card {
-  background: $light-text;
+  background: variables.$light-text;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: $shadow-sm;
-  transition: all 0.3s $ease-out-quad;
+  box-shadow: variables.$shadow-sm;
+  transition: all 0.3s variables.$ease-out-quad;
   min-width: 300px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba($electric-blue, 0.1);
+  border: 1px solid rgba(variables.$electric-blue, 0.1);
   
   &:hover {
-    box-shadow: $shadow-lg;
+    box-shadow: variables.$shadow-lg;
     transform: translateY(-8px);
     border-color: transparent;
     
@@ -220,8 +223,8 @@
     top: 1rem;
     left: 1rem;
     padding: 0.375rem 0.875rem;
-    background: $gradient-accent;
-    color: $light-text;
+    background: variables.$gradient-accent;
+    color: variables.$light-text;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -255,8 +258,8 @@
     z-index: 2;
     
     svg {
-      color: rgba($light-text, 0.8);
-      background: rgba($dark-text, 0.3);
+      color: rgba(variables.$light-text, 0.8);
+      background: rgba(variables.$dark-text, 0.3);
       padding: 0.25rem;
       border-radius: 6px;
       backdrop-filter: blur(10px);
@@ -274,7 +277,7 @@
   
   &__category {
     font-size: 0.875rem;
-    color: $electric-blue;
+    color: variables.$electric-blue;
     font-weight: 500;
     margin-bottom: 0.5rem;
     display: inline-block;
@@ -282,7 +285,7 @@
   
   &__name {
     font-size: 1.125rem;
-    color: $deep-navy;
+    color: variables.$deep-navy;
     margin-bottom: 0.75rem;
     line-height: 1.4;
     min-height: 2.8em;
@@ -302,7 +305,7 @@
   
   &__rating-text {
     font-size: 0.875rem;
-    color: rgba($dark-text, 0.6);
+    color: rgba(variables.$dark-text, 0.6);
     font-weight: 500;
   }
   
@@ -315,8 +318,8 @@
   }
   
   &__feature {
-    background: rgba($electric-blue, 0.1);
-    color: $electric-blue;
+    background: rgba(variables.$electric-blue, 0.1);
+    color: variables.$electric-blue;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.75rem;
@@ -335,12 +338,12 @@
   &__price-current {
     font-size: 1.375rem;
     font-weight: 700;
-    color: $deep-navy;
+    color: variables.$deep-navy;
   }
   
   &__price-old {
     font-size: 1rem;
-    color: rgba($dark-text, 0.5);
+    color: rgba(variables.$dark-text, 0.5);
     text-decoration: line-through;
   }
   
@@ -360,25 +363,25 @@
   }
   
   &__btn-primary {
-    background: $electric-blue;
-    color: $light-text;
+    background: variables.$electric-blue;
+    color: variables.$light-text;
     border: none;
     
     &:hover {
-      background: $deep-navy;
+      background: variables.$deep-navy;
       transform: translateY(-2px);
-      box-shadow: $shadow-md;
+      box-shadow: variables.$shadow-md;
     }
   }
   
   &__btn-secondary {
     background: transparent;
-    border: 2px solid rgba($electric-blue, 0.3);
-    color: $electric-blue;
+    border: 2px solid rgba(variables.$electric-blue, 0.3);
+    color: variables.$electric-blue;
     
     &:hover {
-      border-color: $electric-blue;
-      background: rgba($electric-blue, 0.1);
+      border-color: variables.$electric-blue;
+      background: rgba(variables.$electric-blue, 0.1);
     }
   }
 }

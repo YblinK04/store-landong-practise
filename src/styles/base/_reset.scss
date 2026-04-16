@@ -1,3 +1,5 @@
+@use "variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +11,10 @@ html {
 }
 
 body {
-  font-family: $font-primary;
+  font-family: variables.$font-primary;
   line-height: 1.6;
-  color: $dark-text;
-  background-color: $off-white;
+  color: variables.$dark-text;
+  background-color: variables.$off-white;
   overflow-x: hidden;
 }
 
@@ -38,16 +40,16 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: $off-white;
+  background: variables.$off-white;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $electric-blue;
+  background: variables.$electric-blue;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $deep-navy;
+  background: variables.$deep-navy;
 }
 // Reset section margins
 section {
