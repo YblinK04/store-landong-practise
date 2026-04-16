@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ChevronLeft, ChevronRight, Star, Zap, Shield, Battery } from 'lucide-react';
 
-const products = [ // потом вынести в отдельный файл
+const products = [ 
   {
     id: 1,
     name: 'Quantum Watch Pro',
@@ -118,7 +118,6 @@ export default function ProductsShowcase() {
           </div>
         </motion.div>
 
-        {/* категории */}
         <motion.div
           className="products-showcase__categories"
           initial={{ opacity: 0, y: 20 }}
@@ -135,7 +134,6 @@ export default function ProductsShowcase() {
           ))}
         </motion.div>
 
-        {/* скролл контейнер */}
         <div className="products-showcase__scroll-container" ref={scrollContainerRef}>
           <div className="products-showcase__scroll-content">
             {products.map((product, index) => (

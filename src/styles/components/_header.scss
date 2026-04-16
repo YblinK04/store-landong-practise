@@ -15,7 +15,6 @@
     box-shadow: $shadow-md;
   }
 
-  // Стили для светлых секций (Products, Features)
   &--light {
     &.header--scrolled {
       background: rgba($light-text, 0.95);

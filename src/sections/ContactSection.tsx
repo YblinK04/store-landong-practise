@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { useContactForm } from '@/hooks/useContactForm';
@@ -90,7 +89,6 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="contact-section__content">
-          {/* Контактная информация */}
           <motion.div
             className="contact-section__info"
             initial={{ opacity: 0, x: -30 }}
@@ -135,7 +133,6 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Форма заявки */}
           <motion.div
             className="contact-section__form-wrapper"
             initial={{ opacity: 0, x: 30 }}
@@ -248,7 +245,6 @@ export default function ContactSection() {
                 />
               </div>
 
-              {/* Статус отправки */}
               {submitStatus !== 'idle' && (
                 <motion.div
                   className={`contact-section__status contact-section__status--${submitStatus}`}

@@ -34,14 +34,12 @@ export default function HeroSection() {
 
   return (
     <section id="hero-section" className="hero-section" ref={ref}>
-      {/* фон */}
       <div className="hero-section__background">
         <div className="hero-section__particles"></div>
         <div className="hero-section__gradient"></div>
       </div>
 
       <div className="hero-section__container">
-        {/* основной контент */}
         <div className="hero-section__content">
           <motion.div
             className="hero-section__badge"
@@ -108,7 +106,6 @@ export default function HeroSection() {
             </button>
           </motion.div>
 
-          {/* статы */}
           <motion.div
             className="hero-section__stats"
             initial={{ opacity: 0 }}
@@ -124,7 +121,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* превью продукта */}
         <motion.div
           className="hero-section__preview"
           initial={{ opacity: 0, x: 100 }}
