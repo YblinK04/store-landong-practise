@@ -36,7 +36,6 @@ export default function Header() {
 
   return (
     <motion.header
-      // Добавляем классы динамически. Все стили теперь в SCSS.
       className={`header ${isScrolled ? 'header--scrolled' : ''} ${isLightSection ? 'header--light' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -85,9 +84,7 @@ export default function Header() {
         </div>
       </div>
       
-      {/* Мобильное меню (аналогично адаптируем стили под классы) */}
       <div className={`header__mobile-nav ${isMobileMenuOpen ? 'header__mobile-nav--open' : ''} ${isLightSection ? 'header__mobile-nav--light' : ''}`}>
-         {/* ... содержимое мобильного меню ... */}
       </div>
     </motion.header>
   );
